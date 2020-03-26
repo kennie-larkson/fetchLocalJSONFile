@@ -1,0 +1,4 @@
+This CRUD application is built using basically FRONTEND TECHNOLOGIES:
+HTML, JAVASCRIPT DOM Manipulation, browser FETCH API  and it's run using live-server package
+install globally by npm (node package manager)
+
