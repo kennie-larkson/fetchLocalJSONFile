@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: steelblue;
+        }
+        /* .container{
+            background-color: slategrey;
+        } */
+        .person{
+            background-color: skyblue;
+            padding: 1em;
+        }
+        hr{
+            width: 50%;
+        }
+    </style>
+    <title>JSON COURSE</title>
+</head>
+<body>
+
+    <p><h1>Profile Information</h1></p>
+    <div class="container"></div>
+    
+    <script>
+        
+        const fetchData= async() => {
+            const response = await fetch("people.json")
+            console.log(response.body)
+            const jsonData = await response.json();
+        
+            // console.log(jsonData[0]);
+
+            // const dataReady = jsonData[0].friends[2]
+            // console.log(dataReady)
+            // const parseData =  JSON.parse(dataReady);
+            // const markUp = 
+                // <div class="person">
+                // <p><h2>Name : ${jsonData[0].name}</h2>
+                //     <h2>Age : ${jsonData[0].age}</h2>
+                //     <h2>Address</h2>
+                //     <h2> City : ${jsonData[0].address.city}</h2>
+                //     <h2>Area: ${jsonData[0].address.area}</h2></p>
+                //     <h2>Friends</h2> 
+                //     <h2>Area: ${jsonData[0].friends[0]}, ${jsonData[0].friends[1]}, ${jsonData[0].friends[2]}</h2></p>
+
+                // </div>
+               
+            //  document.querySelector('.container').textContent = markUp ;
+            // document.querySelector('.container').innerHTML = markUp
+            let markUp, fullMarkUp = [];
+
+            jsonData.map((el=>{
+                // console.log(el)
+                 markUp=
+                `
+                <div class="person">
+                <p><h2>Name : ${el.name}</h2>
+                    <h2>Age : ${el.age}</h2>
+                    <h2>Address</h2>
+                    <h2> City : ${el.address.city}</h2>
+                    <h2>Area: ${el.address.area}</h2></p>
+                    <h2>Friends</h2> 
+                    <h2>Area: ${el.friends[0]}, ${el.friends[1]}, ${el.friends[2]}</h2></p>
+
+                </div>
+                <hr>
+                `
+                ;
+                
+                 fullMarkUp.push( markUp );
+                 console.log(fullMarkUp)
+                //  fullMarkUp.join(' ');
+                document.querySelector('.container').innerHTML = `
+                    ${fullMarkUp[0]}
+                    ${fullMarkUp[1]}
+                    ${fullMarkUp[2]}
+                    ${fullMarkUp[3]}
+                `;
+                
+            
+
+            }))
+            
+            // fullMarkUp.map((ele)=>{
+            //     document.querySelector('.container').innerHTML = ele;
+            // })
+            
+            
+        }
+        fetchData();
+
+
+    </script>
+</body>
+</html>

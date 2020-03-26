@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Kennie" ,
+           "age": 20,
+           "address":{
+               "city": "Ilorin",
+               "area": "Tanke"
+           },
+           "friends":["Wale","Sheffman","Myself"]
+    },
+
+    {
+        "name": "Wale" ,
+           "age": 20,
+           "address":{
+               "city": "Ilorin",
+               "area": "AgbaDam"
+           },
+           "friends":["Kennie","Sheffman","Taiwo"]
+    },
+    {
+        "name": "Sheffman" ,
+           "age": 20,
+           "address":{
+               "city": "Ilorin",
+               "area": "Basin"
+           },
+           "friends":["Kennie","Sheffman","Taiwo"]
+    },
+    {
+        "name": "Taiwo" ,
+           "age": 20,
+           "address":{
+               "city": "Ilorin",
+               "area": "Tanke"
+           },
+           "friends":["Wale","Sheffman","Kennie"]
+    }
+]
